@@ -11,7 +11,7 @@ public class _543_DiameterOfBinaryTree {
         depth(root);
         return ans - 1;
     }
-    public int depth(TreeNode node) {
+    private int depth(TreeNode node) {
         if (node == null) return 0;
         int L = depth(node.left);
         int R = depth(node.right);

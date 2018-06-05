@@ -71,10 +71,10 @@ public class _572_SubtreeOfAnotherTree {
             if(t.right != null) {
                 t_r = t.right.val;
             }
-            if((s_l==t_l && s_r==t_r) && (isSubtree(s.left, t.left) && isSubtree(s.right, t.right))) {
+            if((s_l==t_l && s_r==t_r) && (isSubtree2(s.left, t.left) && isSubtree2(s.right, t.right))) {
                 return true;
             }
         }
-        return (isSubtree(s.left, t) || isSubtree(s.right, t));
+        return (isSubtree2(s.left, t) || isSubtree2(s.right, t));
     }
 }
