@@ -1,7 +1,9 @@
 package HashTable;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class _136_SingleNumber {
 	/*
@@ -33,5 +35,21 @@ public class _136_SingleNumber {
             }
         }
         return -1;
+    }
+    
+    /*
+     * Method 3. HashSet
+     * Because every element appears twice or one
+     */
+    public int singleNumber2(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int num: nums) {
+            if(set.contains(num)) {
+                set.remove(num);
+            } else {
+                set.add(num);
+            }
+        }
+        return set.iterator().next();
     }
 }
