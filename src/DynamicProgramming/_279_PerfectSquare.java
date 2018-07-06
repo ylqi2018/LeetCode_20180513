@@ -32,8 +32,19 @@ public class _279_PerfectSquare {
 		int step = 0;
 		queue.offer(n);
 		while(!queue.isEmpty()) {
-			
+			int size = queue.size();
+			step++;
+			for(int i=0; i<size; i++) {
+				int curr = queue.poll();
+				if(!set.add(curr)) continue;
+				for(int j=1; j<=Math.sqrt(curr); j++) {
+					int next = curr - j * j;
+					if(next == 0) return step;
+					queue.offer(next);
+				}
+			}
 		}
+		return 0;
 	}
 	
 }
